@@ -47,7 +47,6 @@ public class Listhantering {
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, "Okänt fel inträffade");
             }
-
         }
         for (Kund kund : kunderLista) {
             if (kund.getNamn().equalsIgnoreCase(input) || kund.getPersonNummer().equalsIgnoreCase(input)) {

@@ -11,7 +11,7 @@ public class ListhanteringTest {
     Listhantering test = new Listhantering();
 
     @Test
-    public void skapaPersonListaTest() {
+    public void skapaKundListaTest() {
         Path testPath = Paths.get("test/gymmet/kunderTest.txt");
         List<Kund> kunderTest = test.skapaKundLista(testPath);
         assert (kunderTest.size() == 14);
