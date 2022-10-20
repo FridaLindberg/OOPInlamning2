@@ -2,7 +2,9 @@ package gymmet;
 
 import javax.swing.*;
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.nio.file.Files;
+import java.nio.file.NoSuchFileException;
 import java.nio.file.Path;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -26,8 +28,8 @@ public class Listhantering {
                 kunderLista.add(kund);
             }
         } catch (Exception e) {
-            e.printStackTrace();
-            System.out.println("Det blev fel");
+            System.out.println("Ett fel inträffade");
+            System.exit(1);
         }
         return kunderLista;
     }
@@ -39,10 +41,13 @@ public class Listhantering {
         } else {
             try {
                 input = JOptionPane.showInputDialog("Skriv namn eller personnummer").trim();
-            } catch (Exception e) {
+            } catch (NullPointerException e) {
                 JOptionPane.showMessageDialog(null, "Avbröt programmet");
                 System.exit(0);
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "Okänt fel inträffade");
             }
+
         }
         for (Kund kund : kunderLista) {
             if (kund.getNamn().equalsIgnoreCase(input) || kund.getPersonNummer().equalsIgnoreCase(input)) {

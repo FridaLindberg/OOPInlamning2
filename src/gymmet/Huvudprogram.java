@@ -31,7 +31,7 @@ public class Huvudprogram {
                 }
 
             } catch (Exception e) {
-                System.out.println("Något blev fel, försök igen");
+                JOptionPane.showMessageDialog(null, "Något blev fel, försök igen");
             }
         }
     }
